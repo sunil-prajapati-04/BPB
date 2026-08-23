@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../lib/api';
 import '../styles/ProductPage.css';
 
-const API_BASE_URL = 'http://localhost:8080';
 const DEFAULT_PRODUCT_IMAGE = 'https://placehold.co/600x600?text=BPB';
 
 const ProductPage = () => {
@@ -18,8 +17,8 @@ const ProductPage = () => {
     const fetchProducts = async () => {
       try {
         const [productsResponse, categoriesResponse] = await Promise.all([
-          axios.get(`${API_BASE_URL}/bpb/product/view`),
-          axios.get(`${API_BASE_URL}/bpb/product/categories`),
+          api.get('/product/view'),
+          api.get('/product/categories'),
         ]);
 
         const allProducts = productsResponse.data || [];

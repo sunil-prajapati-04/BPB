@@ -1,11 +1,9 @@
 import { useState } from 'react'
 import { ArrowRight, Eye, EyeOff, LockKeyhole, ShieldCheck } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import api from '../lib/api'
 import bpbLogo from '../assets/bpb.png'
 import './AdminPortal.css'
-
-const API = 'http://localhost:8080/bpb'
 
 export default function AdminLoginPage() {
   const navigate = useNavigate()
@@ -18,7 +16,7 @@ export default function AdminLoginPage() {
     event.preventDefault()
     setLoading(true); setError('')
     try {
-      await axios.post(`${API}/auth/login`, form, { withCredentials: true })
+      await api.post('/auth/login', form)
       navigate('/admin')
     } catch (err) {
       setError(err.response?.data?.message || 'Unable to sign in. Please try again.')

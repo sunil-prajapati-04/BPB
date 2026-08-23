@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../lib/api'
 import { ArrowLeft, ArrowUpRight, Star, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import '../styles/reviewPage.css'
-
-const reviewClient = axios.create({ baseURL: 'http://localhost:8080/bpb' })
 
 const ReviewStars = ({ rating = 0 }) => (
   <span className="all-review-stars" aria-label={`${rating} out of 5 stars`}>
@@ -61,7 +59,7 @@ export default function ReviewPage() {
   useEffect(() => {
     let active = true
 
-    reviewClient
+    api
       .get('/review/all')
       .then(response => {
         if (active) setReviews(Array.isArray(response.data.data) ? response.data.data : [])

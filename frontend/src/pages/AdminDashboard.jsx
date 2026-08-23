@@ -1,10 +1,10 @@
 import {useEffect,useMemo,useState} from 'react'
 import {Boxes,ChevronDown,Images,LayoutDashboard,LogOut,Menu,Pencil,Plus,ShieldCheck,Star,Trash2,Users,X} from 'lucide-react'
 import {Link,useLocation,useNavigate} from 'react-router-dom'
-import axios from 'axios'
+import api from '../lib/api'
 import bpbLogo from '../assets/bpb.png'
 import './AdminPortal.css'
-const client=axios.create({baseURL:'http://localhost:8080/bpb',withCredentials:true})
+const client=api
 const nav=[['Overview','/admin',LayoutDashboard],['Products','/admin/products',Boxes],['Administrators','/admin/admins',Users],['Reviews','/admin/reviews',Star]]
 const initials=(n='Admin User')=>n.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase()
 const date=d=>d?new Intl.DateTimeFormat('en',{month:'short',day:'numeric',year:'numeric'}).format(new Date(d)):'—'
