@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(helmet());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://bpb-opal.vercel.app/',
     credentials: true,
 }))
 
