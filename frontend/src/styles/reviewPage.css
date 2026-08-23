@@ -1,0 +1,225 @@
+.all-reviews-page {
+  min-height: 100vh;
+  padding: 8rem 0 6rem;
+  background: #f8f2e9;
+  color: #34251c;
+}
+
+.all-reviews-page-inner {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.all-reviews-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #a45e32;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.all-reviews-back-link:hover {
+  color: #6d3b20;
+}
+
+.all-reviews-header {
+  max-width: 700px;
+  margin: 3.5rem auto 4rem;
+  text-align: center;
+}
+
+.all-reviews-eyebrow,
+.all-review-kicker {
+  margin: 0 0 0.75rem;
+  color: #a45e32;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.all-reviews-header h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1.04;
+}
+
+.all-reviews-header > p:last-child {
+  margin: 1.25rem 0 0;
+  color: #796b60;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.all-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.all-review-card {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(126, 79, 44, 0.16);
+  border-radius: 12px;
+  background: #fffdf9;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 16px 34px rgba(90, 56, 27, 0.1);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.all-review-card:hover,
+.all-review-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(164, 94, 50, 0.35);
+  outline: none;
+  box-shadow: 0 22px 42px rgba(90, 56, 27, 0.18);
+}
+
+.all-review-card-topline {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.all-review-card-topline > svg {
+  margin-left: auto;
+  color: #a45e32;
+}
+
+.all-review-avatar,
+.all-review-modal-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #b86b38;
+  color: #fffaf3;
+  font-weight: 800;
+}
+
+.all-review-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.all-reviewer-name {
+  font-weight: 800;
+}
+
+.all-review-stars {
+  display: inline-flex;
+  gap: 3px;
+  color: #c77932;
+}
+
+.all-review-card-text {
+  color: #66564c;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.all-review-card-action {
+  margin-top: auto;
+  color: #a45e32;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.all-reviews-status {
+  color: #796b60;
+  text-align: center;
+}
+
+.all-review-modal-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(38, 25, 17, 0.62);
+}
+
+.all-review-modal {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 42px 34px 36px;
+  border-radius: 14px;
+  background: #fffdf9;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(22, 13, 8, 0.32);
+}
+
+.all-review-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f4e9dc;
+  color: #543b2c;
+  cursor: pointer;
+}
+
+.all-review-modal-avatar {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  font-size: 1.2rem;
+}
+
+.all-review-modal h2 {
+  margin: 0 0 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.8rem;
+}
+
+.all-review-modal-text {
+  margin: 24px auto;
+  color: #66564c;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+
+.all-review-google-link {
+  color: #a45e32;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .all-reviews-page {
+    padding-top: 6rem;
+  }
+
+  .all-reviews-header {
+    margin: 2.5rem auto 2.5rem;
+  }
+
+  .all-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .all-review-card {
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+}
